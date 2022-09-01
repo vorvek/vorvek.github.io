@@ -1,6 +1,19 @@
 h1 {
     font-family: 'Sarpanch', sans-serif;
 }
+#page{
+    background: url('img/noise.png') repeat;
+    min-height:100vh;
+    padding:1rem 0;
+}
+#main-container{
+    max-width:1200px;
+    width:100%;
+    padding:4rem;
+    margin:auto;
+    background:#eee;
+    border-radius:5px;
+}
 #title {
-    color: rgb(41, 36, 36);
+    color:#0f4c81;
 }
