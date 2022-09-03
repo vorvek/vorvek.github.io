@@ -95,8 +95,9 @@ h1, h2, h3, h4 {
     height:auto;
     vertical-align: middle;
 }
-#contact-form{
+#contact-form {
     width:48%;
+    border-right: 1px solid #0f4c81;
 }
 #contact-form input, #contact-form textarea, #contact-form button {
     width: 90%;
@@ -110,6 +111,9 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
     #flex-contact{
         flex-direction: column-reverse;
+    }
+    #contact-form {
+        border-right:none;
     }
     #socials, #contact-form {
         width:100%;
