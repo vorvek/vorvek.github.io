@@ -86,6 +86,7 @@ a:hover, a:visited {
     margin:0 0 4rem;
     padding:0;
     color:#eee;
+    cursor: default;
 }
 #title span {
     font-size:1.15em;
