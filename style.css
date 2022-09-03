@@ -80,16 +80,24 @@ h1, h2, h3, h4 {
 #title span {
     font-size:1.15em;
 }
+#flex-contact{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#socials {
+    width:48%;
+}
 .social-icon {
     width:36px;
     height:auto;
     vertical-align: middle;
 }
 #contact-form{
-    max-width:30rem;
+    width:48%;
 }
 #contact-form input, #contact-form textarea, #contact-form button {
-    width:100%;
+    width: 90%;
     border:1px solid #0f4c81;
     border-radius:5px;
     padding:1ex;
@@ -98,6 +106,17 @@ h1, h2, h3, h4 {
     min-height:8rem;
 }
 @media (max-width: 768px) {
+    #flex-contact{
+        flex-direction: column-reverse;
+    }
+    #socials, #contact-form {
+        width:100%;
+    }
+    #socials {
+        margin-bottom:1rem;
+        padding-bottom:1rem;
+        border-bottom:1px solid #0f4c81;
+    }
     #flex-menu {
         width:30%;
         padding-right: .5rem;
@@ -126,9 +145,6 @@ h1, h2, h3, h4 {
     #content-title {
         font-size: 1.2rem;
         line-height: 1.75rem;
-    }
-    #contact-form input, #contact-form textarea, #contact-form button {
-        width:90%;
     }
 }
 @media (max-width: 400px) {
