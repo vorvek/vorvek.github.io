@@ -20,7 +20,7 @@ h1, h2, h3, h4 {
     min-height:100vh;
 }
 #flex-menu {
-    background: url('img/noise.png') repeat;
+    background: url('img/noise.webp') repeat;
     width:35%;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ h1, h2, h3, h4 {
     border-right:#eee 5px solid;
 }
 #flex-content {
-    background: url('img/noise-light.png') repeat;
+    background: url('img/noise-light.webp') repeat;
     width:65%;
     display: flex;
     flex-direction: column;
