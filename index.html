@@ -2,23 +2,126 @@
 <html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content="jtm Soluciones" />
         <meta name="author" content="Jon Tamayo Martínez" />
         
-        <title>jtm Soluciones</title>
+        <title>jtm Soluciones | Servicios informáticos en Bilbao y alrededores para empresas y particulares.</title>
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@900&family=Noto+Sans&display=swap" rel="stylesheet">
         <link href="style.css" rel="stylesheet" />
     </head>
     <body>
-        <div id="page">
-            <div id="main-container">
-                <h1 id="title">jtm Soluciones</h1>
+        <div id="main-flex-wrap">
+            <div id="flex-menu">
+                <div id="main-menu">
+                    <h1 id="title"><span>jtm</span> Soluciones</h1>
+                    <nav id="menu-nav">
+                        <a class="menu-item" href="#empresas">Empresas</a>
+                        <a class="menu-item" href="#particulares">Particulares</a>
+                        <a class="menu-item" href="#contacto">Contacto</a>
+                    </nav>
+                    <div id="footer">
+                        <!-- Autor -->
+                    </div>
+                </div>
+            </div>
+            <div id="flex-content">
+                <div class="content-box">
+                    <h2 id="content-title">Servicios informáticos en Bilbao y alrededores para empresas y particulares.</h2>
+                </div>
+                <div class="content-box" id="empresas">
+                    <p><strong>Servicios para empresas</strong></p>
+                    <h3>Páginas web</h3>
+                    <p>Tanto si quieres una página simple con la que crear tu presencia online, actualizar un sitio web antiguo, o montar un portal interno de herramientas para tu empresa, pongo a tu disposición mis más de 10 años de experiencia.</p>
+                    <hr/>
+                    <h3>E-Commerce</h3>
+                    <p>¿Quieres llevar tu negocio a Internet? No importa cuan grande sea tu catálogo de productos, tendrás una solución a medida que te permita gestionar de forma sencilla tu inventario, precios, clientes y pedidos.</p>
+                    <hr/>                    
+                    <h3>Dominios y correo electrónico empresarial</h3>
+                    <p>Aunque los correos electrónicos gratuitos son una respuesta sencilla a las comunicaciones online, no son necesariamente la solución más elegante para una empresa. Además, incluso si no dispones de una página web, poseer el dominio de tu marca asegura que nadie más lo esté utilizando.</p>
+                    <hr/>
+                    <h3>Informatización de empresas</h3>
+                    <p>Tu empresa se expande, y con nuevos empleados llegan nuevas necesidades. Una red local, un servidor central, espacio de almacenamiento accesible por trabajadores en remoto... Obtendrás soluciones adaptadas a tus necesidades.</p>
+                    <hr/>
+                    <h3>Mantenimiento de equipos y administración de sistemas informáticos</h3>
+                    <p>Todos esos inoportunos problemas que surgen en el día a día cuando hay ordenadores involucrados.</p>
+                </div>
+                <div class="content-box" id="particulares">
+                    <p><strong>Servicios para particulares</strong></p>
+                    <h3>Montaje de PCs</h3>
+                    <p>¿Tienes un presupuesto para tu nuevo equipo de gaming, y no estás seguro de qué comprar?<br/>¿Quieres actualizar tu ordenador actual y no sabes por dónde empezar?</p>
+                    <p>Ofrezco servicios de montaje de PCs. Tan solo dime qué usos buscas darle al equipo y tu presupuesto, y yo me encargaré de conseguirte las piezas y entregarte el PC ya funcional.</p>
+                    <p>¿Prefieres simplemente un listado de piezas para pedirlo directamente a una tienda? No dudes en preguntarme.</p>
+                    <hr/>
+                    <h3>Páginas web personales</h3>
+                    <p>En los tiempos que corren, las redes sociales han reemplazado el sitio web personal, pero aún es útil tener un lugar que actúe como enlace entre todo nuestro contenido en Internet. Además, es una buena forma de presentar un portfolio de proyectos que de otra forma acaban perdiéndose en las timelines y muros de las redes sociales.</p>
+                </div>
+                <div class="content-box" id="contacto">
+                    <p><strong>Contacto</strong></p>
+                    <p>Telegram: <a href="https://t.me/jtmSoluciones"><img src="img/telegram-app-48.png" class="social-icon" alt="Telegram"/>https://t.me/jtmSoluciones</a></p>
+                    <form id="contact-form">
+                        <p><label>Nombre</label></p>
+                        <p><input type="text" name="user_name"></p>
+                        <p><label>Email</label></p>
+                        <p><input type="email" name="user_email"></p>
+                        <p><label>Teléfono</label></p>
+                        <p><input type="tel" name="user_phone"></p>
+                        <p><label>Consulta</label></p>
+                        <p><textarea name="message"></textarea></p>
+                        <div class="g-recaptcha" data-sitekey="6Lcdps4hAAAAAHkcxERkDwsiqlUG5j6pk05zjRDl"></div>
+                        <p><button type="submit"  value="Enviar consulta">Enviar consulta</button></p>
+                    </form>
+                </div>
             </div>
         </div>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init('B-lTec45YAlvtGdMX');
+            })();
+        </script>
+
+        <script type="text/javascript">
+            const btn = document.getElementById('button');
+
+            document.getElementById('contact-form')
+            .addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                btn.value = 'Enviando consulta...';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_5knsonh';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                    btn.value = 'Enviar consulta';
+                        alert('¡Consulta enviada! Recibirás una respuesta tan pronto como sea posible.');
+                    }, (err) => {
+                    btn.value = 'Enviar consulta';
+                        alert(JSON.stringify(err));
+                    });
+            });
+
+            const links = document.querySelectorAll("a.menu-item");
+            for (const link of links) {
+                link.addEventListener("click", clickHandler);
+            }
+            function clickHandler(e) {
+                e.preventDefault();
+                const href = this.getAttribute("href");
+                const offsetTop = document.querySelector(href).offsetTop;
+                scroll({
+                    top: offsetTop,
+                    behavior: "smooth"
+                });
+            }
+        </script>
     </body>
 </html>
