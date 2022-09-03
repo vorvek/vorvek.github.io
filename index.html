@@ -74,7 +74,7 @@
                         <p><label>Consulta</label></p>
                         <p><textarea name="message"></textarea></p>
                         <div class="g-recaptcha" data-sitekey="6Lcdps4hAAAAAHkcxERkDwsiqlUG5j6pk05zjRDl"></div>
-                        <p><input type="submit" name="submit" value="Enviar consulta"/></p>
+                        <p><button type="submit" id="submit-button" value="Enviar consulta">Enviar consulta</button></p>
                     </form>
                 </div>
             </div>
@@ -88,23 +88,23 @@
         </script>
 
         <script type="text/javascript">
-            const btn = document.getElementById('button');
+            const btn = document.getElementById('submit-button');
 
             document.getElementById('contact-form')
             .addEventListener('submit', function(event) {
                 event.preventDefault();
 
-                btn.value = 'Enviando consulta...';
+                btn.innerText = 'Enviando consulta...';
 
                 const serviceID = 'default_service';
                 const templateID = 'template_5knsonh';
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
-                    btn.value = 'Enviar consulta';
+                    btn.innerText = 'Enviar consulta';
                         alert('¡Consulta enviada! Recibirás una respuesta tan pronto como sea posible.');
                     }, (err) => {
-                    btn.value = 'Enviar consulta';
+                    btn.innerText = 'Enviar consulta';
                         alert(JSON.stringify(err));
                     });
             });
