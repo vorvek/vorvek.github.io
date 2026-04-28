@@ -1,138 +1,210 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="JTM Soluciones | Servicios informáticos en Bilbao y alrededores para empresas y particulares.">
+        <meta name="description" content="JTM Soluciones, Jon Tamayo Martínez: desarrollo de software, automatización y agentes de IA desde Bilbao. Más de 10 años de experiencia como desarrollador.">
         <meta name="author" content="Jon Tamayo Martínez">
-        
-        <title>JTM Soluciones | Servicios informáticos en Bilbao y alrededores para empresas y particulares.</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');" href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@900&family=Noto+Sans:wght@400;700&display=swap">
-        <noscript>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarpanch:wght@900&family=Noto+Sans:wght@400;700&display=swap">
-        </noscript>
-        <link href="style.css" rel="stylesheet" />
+        <meta name="theme-color" content="#0e1014">
+
+        <title>JTM Soluciones | Software, automatización e IA desde Bilbao</title>
+
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="JTM Soluciones">
+        <meta property="og:description" content="Desarrollo de software, automatización y agentes de IA desde Bilbao.">
+        <meta property="og:image" content="/img/jon-tamayo-rembrandt.webp">
+        <meta property="og:url" content="https://jtmsoluciones.com/">
+
+        <link rel="preload" as="image" href="/img/jon-tamayo-rembrandt.webp" type="image/webp">
+        <link href="style.css" rel="stylesheet">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
-    </head>
-    <body>
-        <div id="main-flex-wrap">
-            <div id="flex-menu">
-                <div id="main-menu">
-                    <h1 id="title"><span>JTM</span> Soluciones</h1>
-                    <nav id="menu-nav">
-                        <a class="menu-item" href="#empresas">Empresas</a>
-                        <a class="menu-item" href="#particulares">Particulares</a>
-                        <a class="menu-item" href="#contacto">Contacto</a>
-                    </nav>
-                    <div id="footer">
-                        <!-- Autor -->
-                    </div>
-                </div>
-            </div>
-            <div id="flex-content">
-                <div class="content-box">
-                    <h2 id="content-title">Servicios informáticos en Bilbao y alrededores para empresas y particulares.</h2>
-                </div>
-                <div class="content-box" id="empresas">
-                    <p><strong>Servicios para empresas</strong></p>
-                    <h3>Páginas web</h3>
-                    <p>Tanto si quieres una página simple con la que crear tu presencia online, actualizar un sitio web antiguo, o montar un portal interno de herramientas para tu empresa, pongo a tu disposición mis más de 10 años de experiencia.</p>
-                    <hr/>
-                    <h3>E-Commerce</h3>
-                    <p>¿Quieres llevar tu negocio a Internet? No importa cuan grande sea tu catálogo de productos, tendrás una solución a medida que te permita gestionar de forma sencilla tu inventario, precios, clientes y pedidos.</p>
-                    <hr/>                    
-                    <h3>Dominios y correo electrónico empresarial</h3>
-                    <p>Aunque los correos electrónicos gratuitos son una respuesta sencilla a las comunicaciones online, no son necesariamente la solución más elegante para una empresa. Además, incluso si no dispones de una página web, poseer el dominio de tu marca asegura que nadie más lo esté utilizando.</p>
-                    <hr/>
-                    <h3>Informatización de empresas</h3>
-                    <p>Tu empresa se expande, y con nuevos empleados llegan nuevas necesidades. Una red local, un servidor central, espacio de almacenamiento accesible por trabajadores en remoto... Obtendrás soluciones adaptadas a tus necesidades.</p>
-                    <hr/>
-                    <h3>Mantenimiento de equipos y administración de sistemas informáticos</h3>
-                    <p>Todos esos inoportunos problemas que surgen en el día a día cuando hay ordenadores involucrados.</p>
-                </div>
-                <div class="content-box" id="particulares">
-                    <p><strong>Servicios para particulares</strong></p>
-                    <h3>Montaje de PCs</h3>
-                    <p>¿Tienes un presupuesto para tu nuevo equipo de gaming, y no estás seguro de qué comprar?<br/>¿Quieres actualizar tu ordenador actual y no sabes por dónde empezar?</p>
-                    <p>Ofrezco servicios de montaje de PCs. Tan solo dime qué usos buscas darle al equipo y tu presupuesto, y yo me encargaré de conseguirte las piezas y entregarte el PC ya funcional.</p>
-                    <p>¿Prefieres simplemente un listado de piezas para pedirlo directamente a una tienda? No dudes en preguntarme.</p>
-                    <hr/>
-                    <h3>Páginas web personales</h3>
-                    <p>En los tiempos que corren, las redes sociales han reemplazado el sitio web personal, pero aún es útil tener un lugar que actúe como enlace entre todo nuestro contenido en Internet. Además, es una buena forma de presentar un portfolio de proyectos que de otra forma acaban perdiéndose en las timelines y muros de las redes sociales.</p>
-                </div>
-                <div class="content-box" id="contacto">
-                    <p><strong>Contacto</strong></p>
-                    <div id="flex-contact">
-                        <form id="contact-form">
-                            <p>Puedes utilizar el siguiente formulario para enviar tus consultas sin compromiso.</p>
-                            <p><label>Nombre</label></p>
-                            <p><input title="Nombre" type="text" name="user_name"></p>
-                            <p><label>Email</label></p>
-                            <p><input title="Dirección de correo electrónico" type="email" name="user_email"></p>
-                            <p><label>Teléfono</label></p>
-                            <p><input title="Teléfono" type="tel" name="user_phone"></p>
-                            <p><label>Consulta</label></p>
-                            <p><textarea title="Mensaje" name="message"></textarea></p>
-                            <div class="g-recaptcha" data-size="compact" data-sitekey="6Lcdps4hAAAAAHkcxERkDwsiqlUG5j6pk05zjRDl"></div>
-                            <p><button type="submit" id="submit-button" value="Enviar consulta">Enviar consulta</button></p>
-                        </form>
-                        <div id="socials">
-                            <p>Puedes añadirme directamente en las siguientes aplicaciones y redes.</p>
-                            <p><img src="img/telegram-app-48.webp" class="social-icon" alt="Telegram" width="48" height="48"/> Telegram: <a href="https://t.me/jtmSoluciones">jtmSoluciones</a></p>
-                            <p><img src="img/twitter-app-48.webp" class="social-icon" alt="Twitter" width="48" height="48"/> Twitter: <a href="https://twitter.com/JtmSoluciones">@JtmSoluciones</a></p>
-                            <p><img src="img/discord-app-48.webp" class="social-icon" alt="Discord" width="48" height="48"/> Discord: <a href="https://discord.com/users/137621369524453376">vorvek#1234</a></p>
-                            <p><img src="img/circled-envelope-48.webp" class="social-icon" class="social-icon" alt="Email" width="48" height="48"/> Email: <a href="mailto:jon@jtmsoluciones.com">jon@jtmsoluciones.com</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function() {
-                emailjs.init('B-lTec45YAlvtGdMX');
-            })();
+        <script src="script.js" defer></script>
 
-            const btn = document.getElementById('submit-button');
-
-            document.getElementById('contact-form')
-            .addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                btn.innerText = 'Enviando consulta...';
-
-                const serviceID = 'default_service';
-                const templateID = 'template_5knsonh';
-
-                emailjs.sendForm(serviceID, templateID, this)
-                    .then(() => {
-                    btn.innerText = 'Enviar consulta';
-                        alert('¡Consulta enviada! Recibirás una respuesta tan pronto como sea posible.');
-                    }, (err) => {
-                    btn.innerText = 'Enviar consulta';
-                        alert(JSON.stringify(err));
-                    });
-            });
-
-            const links = document.querySelectorAll("a.menu-item");
-            for (const link of links) {
-                link.addEventListener("click", clickHandler);
-            }
-            function clickHandler(e) {
-                e.preventDefault();
-                const href = this.getAttribute("href");
-                const offsetTop = document.querySelector(href).offsetTop;
-                scroll({
-                    top: offsetTop,
-                    behavior: "smooth"
-                });
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "JTM Soluciones",
+                "url": "https://jtmsoluciones.com/",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Jon Tamayo Martínez",
+                    "sameAs": [
+                        "https://github.com/vorvek",
+                        "https://x.com/vorvek"
+                    ]
+                },
+                "areaServed": "Bilbao",
+                "description": "Desarrollo de software, agentes de IA, automatización e integraciones."
             }
         </script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+        <header class="site-header" aria-label="Principal">
+            <a class="brand" href="#inicio" aria-label="JTM Soluciones">
+                <span class="brand-mark">JTM</span>
+                <span>Soluciones</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Secciones">
+                <a href="#enfoque" data-i18n="nav.approach">Enfoque</a>
+                <a href="#servicios" data-i18n="nav.services">Servicios</a>
+                <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+            </nav>
+
+            <div class="language-switch" aria-label="Idioma">
+                <button class="language-button" type="button" data-set-lang="es" aria-pressed="true">ES</button>
+                <button class="language-button" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </header>
+
+        <main id="main">
+            <section class="hero" id="inicio" aria-labelledby="hero-title">
+                <img class="hero-media" src="/img/jon-tamayo-rembrandt.webp" alt="Retrato de Jon Tamayo Martínez con estética pictórica barroca" width="1122" height="1402">
+                <div class="hero-overlay" aria-hidden="true"></div>
+
+                <div class="hero-content">
+                    <p class="eyebrow" data-i18n="hero.eyebrow">Bilbao · Software a medida · Agentes de IA</p>
+                    <h1 id="hero-title">JTM Soluciones</h1>
+                    <p class="hero-lead" data-i18n="hero.lead">Desarrollo de software a medida, automatizaciones y agentes de IA para empresas que quieren trabajar mejor, no solo más rápido.</p>
+
+                    <div class="hero-proof" aria-label="Datos clave">
+                        <span data-i18n="hero.proof.location">Desde Bilbao</span>
+                        <span data-i18n="hero.proof.experience">Más de 10 años desarrollando software</span>
+                        <span data-i18n="hero.proof.focus">Aplicaciones, automatización e IA</span>
+                    </div>
+
+                    <div class="agent-status" aria-label="Estado de trabajo">
+                        <span class="status-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.status">Modo agente: entender, probar, construir</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="mailto:jon@jtmsoluciones.com?subject=Consulta%20desde%20JTM%20Soluciones" data-i18n="hero.cta">Hablemos</a>
+                        <a class="button button-secondary" href="#servicios" data-i18n="hero.secondary">Ver servicios</a>
+                    </div>
+
+                    <div class="social-links" aria-label="Perfiles sociales">
+                        <a href="https://github.com/vorvek" rel="me noopener" target="_blank">GitHub</a>
+                        <a href="https://x.com/vorvek" rel="me noopener" target="_blank">X / @vorvek</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section intro-section" id="enfoque" aria-labelledby="approach-title">
+                <div class="section-copy">
+                    <p class="section-kicker" data-i18n="approach.kicker">Enfoque</p>
+                    <h2 id="approach-title" data-i18n="approach.title">Software útil en la era de los agentes.</h2>
+                    <p data-i18n="approach.text">Soy Jon Tamayo Martínez, programador en Bilbao. Ayudo a empresas y profesionales a convertir procesos, datos e ideas en herramientas que se usan: aplicaciones web, integraciones, automatizaciones y agentes de IA que reducen trabajo repetitivo.</p>
+                    <div class="build-strip" aria-label="Flujo de trabajo">
+                        <span data-i18n="approach.strip.idea">Idea clara</span>
+                        <span data-i18n="approach.strip.prototype">Prueba funcional</span>
+                        <span data-i18n="approach.strip.system">Sistema en uso</span>
+                    </div>
+                </div>
+
+                <div class="signal-grid" aria-label="Areas de enfoque">
+                    <article class="signal-card">
+                        <span class="signal-number">01</span>
+                        <h3 data-i18n="approach.card1.title">IA con criterio</h3>
+                        <p data-i18n="approach.card1.text">La IA funciona cuando tiene buen contexto, herramientas bien definidas y una tarea concreta. Ese es el punto de partida.</p>
+                    </article>
+                    <article class="signal-card">
+                        <span class="signal-number">02</span>
+                        <h3 data-i18n="approach.card2.title">Software mantenible</h3>
+                        <p data-i18n="approach.card2.text">Más de 10 años desarrollando me han enseñado a valorar código claro, despliegues sencillos y mantenimiento sin sobresaltos.</p>
+                    </article>
+                    <article class="signal-card">
+                        <span class="signal-number">03</span>
+                        <h3 data-i18n="approach.card3.title">Automatización sensata</h3>
+                        <p data-i18n="approach.card3.text">Conecto APIs, bases de datos, documentos y herramientas para quitar pasos manuales donde de verdad compensa.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="servicios" aria-labelledby="services-title">
+                <div class="section-header">
+                    <p class="section-kicker" data-i18n="services.kicker">Servicios</p>
+                    <h2 id="services-title" data-i18n="services.title">Qué puedo construir contigo.</h2>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <p class="service-label">AI</p>
+                        <h3 data-i18n="services.ai.title">Agentes de IA y asistentes internos</h3>
+                        <p data-i18n="services.ai.text">Diseño agentes que consultan información, ejecutan acciones, preparan informes y ayudan en tareas concretas de tu día a día.</p>
+                    </article>
+                    <article class="service-card">
+                        <p class="service-label">WEB</p>
+                        <h3 data-i18n="services.web.title">Aplicaciones web y producto digital</h3>
+                        <p data-i18n="services.web.text">Desde una web profesional hasta herramientas internas, paneles, portales y productos preparados para crecer con el proyecto.</p>
+                    </article>
+                    <article class="service-card">
+                        <p class="service-label">API</p>
+                        <h3 data-i18n="services.integrations.title">Integraciones y automatización</h3>
+                        <p data-i18n="services.integrations.text">Conecto sistemas que ya usas: CRM, hojas de cálculo, correo, gestores documentales, APIs, scripts y bases de datos.</p>
+                    </article>
+                    <article class="service-card">
+                        <p class="service-label">OPS</p>
+                        <h3 data-i18n="services.systems.title">Acompañamiento técnico</h3>
+                        <p data-i18n="services.systems.text">Te ayudo a ordenar un proyecto, elegir una arquitectura, modernizar una herramienta antigua o decidir qué automatizar primero.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="process-band" aria-labelledby="process-title">
+                <div class="process-copy">
+                    <p class="section-kicker" data-i18n="process.kicker">Forma de trabajar</p>
+                    <h2 id="process-title" data-i18n="process.title">Primero entender. Luego construir.</h2>
+                </div>
+                <ol class="process-list">
+                    <li>
+                        <strong data-i18n="process.step1.title">Entender</strong>
+                        <span data-i18n="process.step1.text">Aterrizamos el problema, los datos disponibles y qué tendría que pasar para que el proyecto merezca la pena.</span>
+                    </li>
+                    <li>
+                        <strong data-i18n="process.step2.title">Probar</strong>
+                        <span data-i18n="process.step2.text">Preparo una primera versión usable para validar la idea antes de invertir más de la cuenta.</span>
+                    </li>
+                    <li>
+                        <strong data-i18n="process.step3.title">Construir</strong>
+                        <span data-i18n="process.step3.text">Si encaja, lo convierto en una herramienta mantenible, con integraciones claras y sin dependencias innecesarias.</span>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section contact-section" id="contacto" aria-labelledby="contact-title">
+                <div class="contact-copy">
+                    <p class="section-kicker" data-i18n="contact.kicker">Contacto</p>
+                    <h2 id="contact-title" data-i18n="contact.title">Cuéntame qué quieres automatizar, construir o mejorar.</h2>
+                    <p data-i18n="contact.text">Trabajo desde Bilbao, en local y en remoto. Si tienes un proceso repetitivo, una herramienta que se queda corta o una idea que hay que bajar a código, podemos empezar por una conversación concreta.</p>
+                </div>
+
+                <div class="contact-links" aria-label="Contacto y perfiles">
+                    <a href="mailto:jon@jtmsoluciones.com?subject=Consulta%20desde%20JTM%20Soluciones">
+                        <span>Email</span>
+                        <strong>jon@jtmsoluciones.com</strong>
+                    </a>
+                    <a href="https://github.com/vorvek" target="_blank" rel="me noopener">
+                        <span>GitHub</span>
+                        <strong>github.com/vorvek</strong>
+                    </a>
+                    <a href="https://x.com/vorvek" target="_blank" rel="me noopener">
+                        <span>X</span>
+                        <strong>x.com/vorvek</strong>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <span>© <span id="year">2026</span> Jon Tamayo Martínez</span>
+            <span>JTM Soluciones · jtmsoluciones.com</span>
+        </footer>
     </body>
 </html>
