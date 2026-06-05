@@ -8,7 +8,7 @@ const translations = {
         "nav.projects": "Proyectos",
         "nav.contact": "Contacto",
         "hero.eyebrow": "Bilbao · Software a medida · Agentes de IA",
-        "hero.lead": "Desarrollo de software a medida, automatizaciones y agentes de IA para empresas que quieren trabajar mejor, no solo más rápido.",
+        "hero.lead": "Hago software a medida, automatizaciones y agentes de IA para equipos que quieren trabajar mejor, no solo más rápido.",
         "hero.proof.location": "Desde Bilbao",
         "hero.proof.experience": "Más de 10 años desarrollando software",
         "hero.proof.focus": "Aplicaciones, automatización e IA",
@@ -17,14 +17,14 @@ const translations = {
         "hero.secondary": "Ver servicios",
         "approach.kicker": "Enfoque",
         "approach.title": "Software útil en la era de los agentes.",
-        "approach.text": "Soy Jon Tamayo Martínez, programador en Bilbao. Ayudo a empresas y profesionales a convertir procesos, datos e ideas en herramientas que se usan: aplicaciones web, integraciones, automatizaciones y agentes de IA que reducen trabajo repetitivo.",
+        "approach.text": "Soy Jon Tamayo Martínez, programador en Bilbao. Ayudo a empresas y profesionales a convertir procesos, datos e ideas en herramientas que de verdad se usan: aplicaciones web, integraciones, automatizaciones y agentes de IA que quitan trabajo repetitivo de en medio.",
         "approach.strip.idea": "Idea clara",
         "approach.strip.prototype": "Prueba funcional",
         "approach.strip.system": "Sistema en uso",
         "approach.card1.title": "IA con criterio",
         "approach.card1.text": "La IA funciona cuando tiene buen contexto, herramientas bien definidas y una tarea concreta. Ese es el punto de partida.",
         "approach.card2.title": "Software mantenible",
-        "approach.card2.text": "Más de 10 años desarrollando me han enseñado a valorar código claro, despliegues sencillos y mantenimiento sin sobresaltos.",
+        "approach.card2.text": "Más de diez años programando me han enseñado a valorar el código claro, los despliegues sencillos y un mantenimiento sin sobresaltos.",
         "approach.card3.title": "Automatización sensata",
         "approach.card3.text": "Conecto APIs, bases de datos, documentos y herramientas para quitar pasos manuales donde de verdad compensa.",
         "services.kicker": "Servicios",
@@ -52,7 +52,7 @@ const translations = {
         "process.step3.text": "Si encaja, lo convierto en una herramienta mantenible, con integraciones claras y sin dependencias innecesarias.",
         "contact.kicker": "Contacto",
         "contact.title": "Cuéntame qué quieres automatizar, construir o mejorar.",
-        "contact.text": "Trabajo desde Bilbao, en local y en remoto. Si tienes un proceso repetitivo, una herramienta que se queda corta o una idea que hay que bajar a código, podemos empezar por una conversación concreta."
+        "contact.text": "Trabajo desde Bilbao, en local y en remoto. Si tienes un proceso que repites cada semana, una herramienta que se queda corta o una idea que hay que bajar a código, empezamos por una conversación y vemos si encaja."
     },
     en: {
         metaTitle: "JTM Soluciones | AI, software and automation from Bilbao",
@@ -63,7 +63,7 @@ const translations = {
         "nav.projects": "Projects",
         "nav.contact": "Contact",
         "hero.eyebrow": "Bilbao · Software development · AI agents",
-        "hero.lead": "Modern computing solutions for teams that want to automate, build product and use AI in a practical way.",
+        "hero.lead": "I build custom software, automation and AI agents for teams that want to work better, not just faster.",
         "hero.proof.location": "Based in Bilbao",
         "hero.proof.experience": "10+ years as a developer",
         "hero.proof.focus": "Software, agents and integrations",
@@ -72,14 +72,14 @@ const translations = {
         "hero.secondary": "View services",
         "approach.kicker": "Approach",
         "approach.title": "Practical programming for the age of agents.",
-        "approach.text": "I am Jon Tamayo Martínez, a developer based in Bilbao. I work with companies and independent professionals who need to turn ideas, processes and data into reliable software: web apps, automations, integrations and AI agents that remove real work.",
+        "approach.text": "I'm Jon Tamayo Martínez, a developer in Bilbao. I help companies and independent professionals turn ideas, processes and data into software people actually use: web apps, integrations, automations and AI agents that take repetitive work off your plate.",
         "approach.strip.idea": "Clear idea",
         "approach.strip.prototype": "Live prototype",
         "approach.strip.system": "Usable system",
         "approach.card1.title": "Useful AI",
-        "approach.card1.text": "Prototypes, agents, internal assistants and workflows where AI has context, tools and a clear job to do.",
+        "approach.card1.text": "AI works when it has real context, the right tools and a clear job to do. That's where I start.",
         "approach.card2.title": "Software that holds up",
-        "approach.card2.text": "More than 10 years of development have made me value readable code, simple deployments and calm maintenance.",
+        "approach.card2.text": "More than ten years of building software taught me to value readable code, simple deployments and maintenance that doesn't keep you up at night.",
         "approach.card3.title": "Practical automation",
         "approach.card3.text": "I connect APIs, databases, documents and tools so repetitive processes can move into the background.",
         "services.kicker": "Services",
@@ -107,7 +107,7 @@ const translations = {
         "process.step3.text": "Maintainable code, clear integrations and a delivery you can use without relying on magic.",
         "contact.kicker": "Contact",
         "contact.title": "Tell me what you want to automate, build or improve.",
-        "contact.text": "I am based in Bilbao and work both locally and remotely. If you have a repeated process, a tool that falls short or an idea that needs technical shape, we can start with a concrete conversation."
+        "contact.text": "I'm based in Bilbao and work both on-site and remotely. If you have a process you repeat every week, a tool that falls short or an idea that needs technical shape, we can start with a conversation and see if it fits."
     }
 };
 
