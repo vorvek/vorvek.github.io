@@ -466,6 +466,85 @@ h3 {
     color: var(--blue);
 }
 
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: var(--white);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--coral));
+}
+
+.project-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.project-head h3 {
+    margin: 0;
+}
+
+.project-langs {
+    color: var(--blue);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.project-card p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: auto;
+    padding-top: 0.4rem;
+}
+
+.project-links a {
+    border: 1px solid rgba(255, 153, 51, 0.42);
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    background: rgba(255, 153, 51, 0.1);
+    outline: none;
+}
+
 .process-band {
     display: grid;
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -561,7 +640,8 @@ h3 {
 }
 
 .signal-card:hover,
-.service-card:hover {
+.service-card:hover,
+.project-card:hover {
     transform: translateY(-3px);
 }
 
@@ -572,6 +652,7 @@ h3 {
 
     .signal-card,
     .service-card,
+    .project-card,
     .contact-links a,
     .button {
         transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
@@ -679,7 +760,8 @@ h3 {
     }
 
     .signal-grid,
-    .service-grid {
+    .service-grid,
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
