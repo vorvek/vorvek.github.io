@@ -59,6 +59,7 @@ const translations = {
         "github.stats.followers": "Seguidores",
         "github.stats.loading": "Cargando datos de GitHub",
         "github.stats.ready": "Datos públicos de GitHub",
+        "github.stats.stale": "Datos públicos de GitHub en caché",
         "github.stats.unavailable": "Datos no disponibles ahora"
     },
     en: {
@@ -121,14 +122,19 @@ const translations = {
         "github.stats.followers": "Followers",
         "github.stats.loading": "Loading GitHub data",
         "github.stats.ready": "Public GitHub data",
+        "github.stats.stale": "Cached public GitHub data",
         "github.stats.unavailable": "Data unavailable right now"
     }
 };
 
 const githubUsername = "vorvek";
+const githubStatsCacheUrl = "/github-stats.json?v=20260606-public";
+const githubStatsCacheKey = "jtm-github-stats";
+const githubStatsCacheTtlMs = 60 * 60 * 1000;
 const githubStatsState = {
     status: "loading",
-    data: null
+    data: null,
+    cachedAt: 0
 };
 const emailCodePoints = {
     user: [106, 111, 110],
@@ -220,6 +226,8 @@ function renderGithubStats() {
 
     const statusKey = githubStatsState.status === "ready"
         ? "github.stats.ready"
+        : githubStatsState.status === "stale"
+            ? "github.stats.stale"
         : githubStatsState.status === "error"
             ? "github.stats.unavailable"
             : "github.stats.loading";
@@ -227,12 +235,94 @@ function renderGithubStats() {
     status.textContent = translate(statusKey);
 }
 
+function normalizeGithubStatsCache(payload) {
+    const rawStats = payload?.data ?? payload;
+    const data = {
+        repositories: normalizeGithubStat(rawStats?.repositories),
+        stars: normalizeGithubStat(rawStats?.stars),
+        commits: normalizeGithubStat(rawStats?.commits),
+        followers: normalizeGithubStat(rawStats?.followers)
+    };
+    const hasAllStats = Object.values(data).every((value) => value !== null);
+    const cachedAt = Date.parse(payload?.cachedAt ?? payload?.fetchedAt ?? payload?.updatedAt ?? "");
+
+    if (!hasAllStats || !Number.isFinite(cachedAt)) {
+        return null;
+    }
+
+    return { data, cachedAt };
+}
+
+function normalizeGithubStat(value) {
+    const number = Number(value);
+    if (!Number.isFinite(number) || number < 0) {
+        return null;
+    }
+
+    return Math.round(number);
+}
+
+function githubStatsCacheStatus(cache) {
+    return Date.now() - cache.cachedAt < githubStatsCacheTtlMs ? "ready" : "stale";
+}
+
+function newerGithubStatsCache(left, right) {
+    if (!left) {
+        return right;
+    }
+
+    if (!right) {
+        return left;
+    }
+
+    return right.cachedAt > left.cachedAt ? right : left;
+}
+
+function readStoredGithubStatsCache() {
+    try {
+        return normalizeGithubStatsCache(JSON.parse(localStorage.getItem(githubStatsCacheKey)));
+    } catch (error) {
+        return null;
+    }
+}
+
+function writeStoredGithubStatsCache(cache) {
+    try {
+        localStorage.setItem(githubStatsCacheKey, JSON.stringify({
+            cachedAt: new Date(cache.cachedAt).toISOString(),
+            data: cache.data
+        }));
+    } catch (error) {
+        // Some privacy modes block storage; the in-memory cache still works for this view.
+    }
+}
+
+function applyGithubStatsCache(cache, status = githubStatsCacheStatus(cache)) {
+    githubStatsState.data = cache.data;
+    githubStatsState.cachedAt = cache.cachedAt;
+    githubStatsState.status = status;
+    renderGithubStats();
+}
+
+async function fetchSeedGithubStatsCache(signal) {
+    const response = await fetch(githubStatsCacheUrl, {
+        cache: "force-cache",
+        signal
+    });
+
+    if (!response.ok) {
+        throw new Error(`GitHub stats cache returned ${response.status}`);
+    }
+
+    return normalizeGithubStatsCache(await response.json());
+}
+
 async function fetchGithubJson(url, signal) {
     const response = await fetch(url, {
         headers: {
             Accept: "application/vnd.github+json"
         },
-        cache: "force-cache",
+        cache: "no-store",
         signal
     });
 
@@ -248,10 +338,32 @@ async function loadGithubStats() {
         return;
     }
 
-    renderGithubStats();
+    let cache = readStoredGithubStatsCache();
+    if (cache) {
+        applyGithubStatsCache(cache);
+    } else {
+        renderGithubStats();
+    }
 
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 4500);
+    const timeout = window.setTimeout(() => controller.abort(), 6000);
+
+    try {
+        cache = newerGithubStatsCache(cache, await fetchSeedGithubStatsCache(controller.signal));
+        if (cache) {
+            applyGithubStatsCache(cache);
+            writeStoredGithubStatsCache(cache);
+        }
+    } catch (error) {
+        // Missing or blocked seed files should not prevent a public refresh attempt.
+    }
+
+    if (cache && githubStatsCacheStatus(cache) === "ready") {
+        window.clearTimeout(timeout);
+        return;
+    }
+
+    renderGithubStats();
 
     try {
         const [profile, repos, commits] = await Promise.all([
@@ -267,9 +379,18 @@ async function loadGithubStats() {
             commits: Number(commits.total_count) || 0,
             followers: Number(profile.followers) || 0
         };
+        githubStatsState.cachedAt = Date.now();
         githubStatsState.status = "ready";
+        writeStoredGithubStatsCache({
+            cachedAt: githubStatsState.cachedAt,
+            data: githubStatsState.data
+        });
     } catch (error) {
-        githubStatsState.status = "error";
+        if (cache) {
+            applyGithubStatsCache(cache, "stale");
+        } else {
+            githubStatsState.status = "error";
+        }
     } finally {
         window.clearTimeout(timeout);
         renderGithubStats();
@@ -290,6 +411,7 @@ function initGithubStats() {
         observer?.disconnect();
         window.removeEventListener("scroll", maybeLoadStats);
         window.removeEventListener("resize", maybeLoadStats);
+        window.removeEventListener("hashchange", maybeLoadStats);
     }
 
     function startLoading() {
@@ -308,7 +430,7 @@ function initGithubStats() {
     }
 
     function maybeLoadStats() {
-        if (statsAreNearViewport()) {
+        if (location.hash === "#contacto" || statsAreNearViewport()) {
             startLoading();
         }
     }
@@ -327,6 +449,7 @@ function initGithubStats() {
 
     window.addEventListener("scroll", maybeLoadStats, { passive: true });
     window.addEventListener("resize", maybeLoadStats);
+    window.addEventListener("hashchange", maybeLoadStats);
     maybeLoadStats();
 }
 
