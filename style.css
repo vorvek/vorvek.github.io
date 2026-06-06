@@ -363,6 +363,7 @@ h3 {
     width: min(1180px, calc(100% - 4rem));
     margin: 0 auto;
     padding: 5.7rem 0;
+    scroll-margin-top: 6rem;
 }
 
 .intro-section {
@@ -633,6 +634,41 @@ h3 {
     border-left-color: var(--coral);
 }
 
+.github-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem 1rem;
+    margin: 0.75rem 0 0;
+    padding: 0.75rem 0 0;
+    border-top: 1px solid var(--line);
+}
+
+.github-stats div {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.github-stats dt {
+    color: var(--muted);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.github-stats dd {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.18rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.github-stats-status {
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
 .contact-links a:hover,
 .contact-links a:focus-visible {
     transform: translateY(-2px);
@@ -757,6 +793,7 @@ h3 {
     .section {
         width: min(100% - 2rem, 1180px);
         padding: 4rem 0;
+        scroll-margin-top: 8.75rem;
     }
 
     .signal-grid,

@@ -87,7 +87,7 @@
                     </div>
 
                     <div class="hero-actions">
-                        <a class="button button-primary" href="mailto:jon@jtmsoluciones.com?subject=Consulta%20desde%20JTM%20Soluciones" data-i18n="hero.cta">Hablemos</a>
+                        <a class="button button-primary" href="#contacto" data-email-link data-email-subject="Consulta desde JTM Soluciones" data-i18n="hero.cta">Hablemos</a>
                         <a class="button button-secondary" href="#servicios" data-i18n="hero.secondary">Ver servicios</a>
                     </div>
 
@@ -220,13 +220,32 @@
                 </div>
 
                 <div class="contact-links" aria-label="Contacto y perfiles">
-                    <a href="mailto:jon@jtmsoluciones.com?subject=Consulta%20desde%20JTM%20Soluciones">
+                    <a href="#contacto" data-email-link data-email-subject="Consulta desde JTM Soluciones">
                         <span>Email</span>
-                        <strong>jon@jtmsoluciones.com</strong>
+                        <strong data-email-text>correo protegido</strong>
                     </a>
                     <a href="https://github.com/vorvek" target="_blank" rel="me noopener">
                         <span>GitHub</span>
                         <strong>github.com/vorvek</strong>
+                        <dl class="github-stats" data-github-stats>
+                            <div>
+                                <dt data-i18n="github.stats.repositories">Repos</dt>
+                                <dd data-github-stat="repositories">...</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="github.stats.stars">Estrellas</dt>
+                                <dd data-github-stat="stars">...</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="github.stats.commits">Commits</dt>
+                                <dd data-github-stat="commits">...</dd>
+                            </div>
+                            <div>
+                                <dt data-i18n="github.stats.followers">Seguidores</dt>
+                                <dd data-github-stat="followers">...</dd>
+                            </div>
+                        </dl>
+                        <span class="github-stats-status" data-github-status data-i18n="github.stats.loading" aria-live="polite">Cargando datos de GitHub</span>
                     </a>
                     <a href="https://x.com/vorvek" target="_blank" rel="me noopener">
                         <span>X</span>

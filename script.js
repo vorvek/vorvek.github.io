@@ -52,7 +52,14 @@ const translations = {
         "process.step3.text": "Si encaja, lo convierto en una herramienta mantenible, con integraciones claras y sin dependencias innecesarias.",
         "contact.kicker": "Contacto",
         "contact.title": "Cuéntame qué quieres automatizar, construir o mejorar.",
-        "contact.text": "Trabajo desde Bilbao, en local y en remoto. Si tienes un proceso que repites cada semana, una herramienta que se queda corta o una idea que hay que bajar a código, empezamos por una conversación y vemos si encaja."
+        "contact.text": "Trabajo desde Bilbao, en local y en remoto. Si tienes un proceso que repites cada semana, una herramienta que se queda corta o una idea que hay que bajar a código, empezamos por una conversación y vemos si encaja.",
+        "github.stats.repositories": "Repos",
+        "github.stats.stars": "Estrellas",
+        "github.stats.commits": "Commits",
+        "github.stats.followers": "Seguidores",
+        "github.stats.loading": "Cargando datos de GitHub",
+        "github.stats.ready": "Datos públicos de GitHub",
+        "github.stats.unavailable": "Datos no disponibles ahora"
     },
     en: {
         metaTitle: "JTM Soluciones | AI, software and automation from Bilbao",
@@ -107,10 +114,26 @@ const translations = {
         "process.step3.text": "Maintainable code, clear integrations and a delivery you can use without relying on magic.",
         "contact.kicker": "Contact",
         "contact.title": "Tell me what you want to automate, build or improve.",
-        "contact.text": "I'm based in Bilbao and work both on-site and remotely. If you have a process you repeat every week, a tool that falls short or an idea that needs technical shape, we can start with a conversation and see if it fits."
+        "contact.text": "I'm based in Bilbao and work both on-site and remotely. If you have a process you repeat every week, a tool that falls short or an idea that needs technical shape, we can start with a conversation and see if it fits.",
+        "github.stats.repositories": "Repos",
+        "github.stats.stars": "Stars",
+        "github.stats.commits": "Commits",
+        "github.stats.followers": "Followers",
+        "github.stats.loading": "Loading GitHub data",
+        "github.stats.ready": "Public GitHub data",
+        "github.stats.unavailable": "Data unavailable right now"
     }
 };
 
+const githubUsername = "vorvek";
+const githubStatsState = {
+    status: "loading",
+    data: null
+};
+const emailCodePoints = {
+    user: [106, 111, 110],
+    domain: [106, 116, 109, 115, 111, 108, 117, 99, 105, 111, 110, 101, 115, 46, 99, 111, 109]
+};
 const spanishTimeZones = new Set(["Europe/Madrid", "Atlantic/Canary"]);
 const spanishLocales = new Set(["es-es", "ca-es", "eu-es", "gl-es"]);
 
@@ -140,6 +163,9 @@ function setLanguage(lang, persist = false) {
     if (persist) {
         localStorage.setItem("jtm-language", nextLang);
     }
+
+    renderGithubStats();
+    hydrateEmailLinks();
 }
 
 function browserLooksSpanish() {
@@ -151,6 +177,121 @@ function browserLooksSpanish() {
         .some((language) => spanishLocales.has(language));
 
     return spanishTimeZones.has(timeZone) || hasSpanishLocale;
+}
+
+function currentLanguage() {
+    return document.documentElement.lang === "en" ? "en" : "es";
+}
+
+function translate(key) {
+    return translations[currentLanguage()]?.[key] ?? translations.es[key] ?? key;
+}
+
+function formatStat(value) {
+    if (!Number.isFinite(value)) {
+        return "...";
+    }
+
+    return new Intl.NumberFormat(currentLanguage()).format(value);
+}
+
+function renderGithubStats() {
+    const stats = githubStatsState.data;
+    const values = {
+        repositories: stats?.repositories,
+        stars: stats?.stars,
+        commits: stats?.commits,
+        followers: stats?.followers
+    };
+
+    document.querySelectorAll("[data-github-stat]").forEach((element) => {
+        const statName = element.getAttribute("data-github-stat");
+        element.textContent = formatStat(values[statName]);
+    });
+
+    const status = document.querySelector("[data-github-status]");
+    if (!status) {
+        return;
+    }
+
+    const statusKey = githubStatsState.status === "ready"
+        ? "github.stats.ready"
+        : githubStatsState.status === "error"
+            ? "github.stats.unavailable"
+            : "github.stats.loading";
+
+    status.textContent = translate(statusKey);
+}
+
+async function fetchGithubJson(url, signal) {
+    const response = await fetch(url, {
+        headers: {
+            Accept: "application/vnd.github+json"
+        },
+        cache: "no-store",
+        signal
+    });
+
+    if (!response.ok) {
+        throw new Error(`GitHub API returned ${response.status}`);
+    }
+
+    return response.json();
+}
+
+async function loadGithubStats() {
+    if (!document.querySelector("[data-github-stats]")) {
+        return;
+    }
+
+    renderGithubStats();
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 4500);
+
+    try {
+        const [profile, repos, commits] = await Promise.all([
+            fetchGithubJson(`https://api.github.com/users/${githubUsername}`, controller.signal),
+            fetchGithubJson(`https://api.github.com/users/${githubUsername}/repos?per_page=100&type=owner&sort=pushed`, controller.signal),
+            fetchGithubJson(`https://api.github.com/search/commits?q=author:${githubUsername}`, controller.signal)
+        ]);
+        const publicRepos = Array.isArray(repos) ? repos : [];
+
+        githubStatsState.data = {
+            repositories: Number(profile.public_repos) || publicRepos.length,
+            stars: publicRepos.reduce((total, repo) => total + (Number(repo.stargazers_count) || 0), 0),
+            commits: Number(commits.total_count) || 0,
+            followers: Number(profile.followers) || 0
+        };
+        githubStatsState.status = "ready";
+    } catch (error) {
+        githubStatsState.status = "error";
+    } finally {
+        window.clearTimeout(timeout);
+        renderGithubStats();
+    }
+}
+
+function decodeEmailPart(points) {
+    return String.fromCharCode(...points);
+}
+
+function getEmailAddress() {
+    return `${decodeEmailPart(emailCodePoints.user)}@${decodeEmailPart(emailCodePoints.domain)}`;
+}
+
+function hydrateEmailLinks() {
+    const emailAddress = getEmailAddress();
+
+    document.querySelectorAll("[data-email-link]").forEach((link) => {
+        const subject = link.getAttribute("data-email-subject");
+        const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
+        link.setAttribute("href", `mailto:${emailAddress}${query}`);
+    });
+
+    document.querySelectorAll("[data-email-text]").forEach((element) => {
+        element.textContent = emailAddress;
+    });
 }
 
 async function detectLanguage() {
@@ -193,4 +334,6 @@ document.querySelectorAll("[data-set-lang]").forEach((button) => {
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
+hydrateEmailLinks();
+loadGithubStats();
 detectLanguage();
