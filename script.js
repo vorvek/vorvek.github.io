@@ -409,8 +409,6 @@ function initGithubStats() {
 
     function cleanup() {
         observer?.disconnect();
-        window.removeEventListener("scroll", maybeLoadStats);
-        window.removeEventListener("resize", maybeLoadStats);
         window.removeEventListener("hashchange", maybeLoadStats);
     }
 
@@ -424,13 +422,8 @@ function initGithubStats() {
         loadGithubStats();
     }
 
-    function statsAreNearViewport() {
-        const rect = triggerElement.getBoundingClientRect();
-        return rect.top < window.innerHeight + 420 && rect.bottom > -420;
-    }
-
     function maybeLoadStats() {
-        if (location.hash === "#contacto" || statsAreNearViewport()) {
+        if (location.hash === "#contacto") {
             startLoading();
         }
     }
@@ -447,10 +440,12 @@ function initGithubStats() {
         observer.observe(triggerElement);
     }
 
-    window.addEventListener("scroll", maybeLoadStats, { passive: true });
-    window.addEventListener("resize", maybeLoadStats);
     window.addEventListener("hashchange", maybeLoadStats);
     maybeLoadStats();
+
+    if (!started && !("IntersectionObserver" in window)) {
+        window.setTimeout(startLoading, 2500);
+    }
 }
 
 function decodeEmailPart(points) {
