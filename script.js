@@ -161,7 +161,11 @@ function setLanguage(lang, persist = false) {
     });
 
     if (persist) {
-        localStorage.setItem("jtm-language", nextLang);
+        try {
+            localStorage.setItem("jtm-language", nextLang);
+        } catch (error) {
+            // Some privacy modes block storage; language still updates for this page view.
+        }
     }
 
     renderGithubStats();
@@ -228,7 +232,7 @@ async function fetchGithubJson(url, signal) {
         headers: {
             Accept: "application/vnd.github+json"
         },
-        cache: "no-store",
+        cache: "force-cache",
         signal
     });
 
@@ -272,6 +276,60 @@ async function loadGithubStats() {
     }
 }
 
+function initGithubStats() {
+    const statsElement = document.querySelector("[data-github-stats]");
+    if (!statsElement) {
+        return;
+    }
+
+    const triggerElement = document.querySelector("#contacto") ?? statsElement;
+    let observer = null;
+    let started = false;
+
+    function cleanup() {
+        observer?.disconnect();
+        window.removeEventListener("scroll", maybeLoadStats);
+        window.removeEventListener("resize", maybeLoadStats);
+    }
+
+    function startLoading() {
+        if (started) {
+            return;
+        }
+
+        started = true;
+        cleanup();
+        loadGithubStats();
+    }
+
+    function statsAreNearViewport() {
+        const rect = triggerElement.getBoundingClientRect();
+        return rect.top < window.innerHeight + 420 && rect.bottom > -420;
+    }
+
+    function maybeLoadStats() {
+        if (statsAreNearViewport()) {
+            startLoading();
+        }
+    }
+
+    renderGithubStats();
+
+    if ("IntersectionObserver" in window) {
+        observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                startLoading();
+            }
+        }, { rootMargin: "420px 0px" });
+
+        observer.observe(triggerElement);
+    }
+
+    window.addEventListener("scroll", maybeLoadStats, { passive: true });
+    window.addEventListener("resize", maybeLoadStats);
+    maybeLoadStats();
+}
+
 function decodeEmailPart(points) {
     return String.fromCharCode(...points);
 }
@@ -294,39 +352,21 @@ function hydrateEmailLinks() {
     });
 }
 
-async function detectLanguage() {
-    const savedLanguage = localStorage.getItem("jtm-language");
+function detectLanguage() {
+    let savedLanguage = null;
+
+    try {
+        savedLanguage = localStorage.getItem("jtm-language");
+    } catch (error) {
+        savedLanguage = null;
+    }
+
     if (savedLanguage) {
         setLanguage(savedLanguage);
         return;
     }
 
-    const fallback = browserLooksSpanish() ? "es" : "en";
-    setLanguage(fallback);
-
-    const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 1200);
-
-    try {
-        const response = await fetch("https://www.cloudflare.com/cdn-cgi/trace", {
-            cache: "no-store",
-            signal: controller.signal
-        });
-        const trace = await response.text();
-        const country = trace
-            .split("\n")
-            .find((line) => line.startsWith("loc="))
-            ?.replace("loc=", "")
-            .trim();
-
-        if (country) {
-            setLanguage(country === "ES" ? "es" : "en");
-        }
-    } catch (error) {
-        setLanguage(fallback);
-    } finally {
-        window.clearTimeout(timeout);
-    }
+    setLanguage(browserLooksSpanish() ? "es" : "en");
 }
 
 document.querySelectorAll("[data-set-lang]").forEach((button) => {
@@ -335,5 +375,5 @@ document.querySelectorAll("[data-set-lang]").forEach((button) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 hydrateEmailLinks();
-loadGithubStats();
 detectLanguage();
+initGithubStats();
