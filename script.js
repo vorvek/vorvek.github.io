@@ -1,23 +1,23 @@
 const translations = {
     es: {
         metaTitle: "JTM Soluciones | Desarrollo web, software e IA desde Bilbao",
-        metaDescription: "JTM Soluciones, Jon Tamayo Martínez: desarrollo web, software a medida, automatización y agentes de IA desde Bilbao. Más de 10 años de experiencia como desarrollador.",
+        metaDescription: "JTM Soluciones, Jon Tamayo Martínez: desarrollo web, software a medida, automatización e IA desde Bilbao. Más de 10 años de experiencia como desarrollador.",
         skip: "Saltar al contenido",
         "nav.approach": "Enfoque",
         "nav.services": "Servicios",
         "nav.projects": "Proyectos",
         "nav.contact": "Contacto",
-        "hero.eyebrow": "Bilbao · Software a medida · Agentes de IA",
-        "hero.lead": "Hago desarrollo web, software a medida, automatizaciones y agentes de IA para equipos que quieren trabajar mejor, no solo más rápido.",
+        "hero.eyebrow": "Bilbao · Desarrollo web · Software · IA",
+        "hero.lead": "Soy desarrollador. Hago webs, software a medida, automatizaciones y soluciones con IA para equipos que quieren trabajar mejor, no solo más rápido.",
         "hero.proof.location": "Desde Bilbao",
         "hero.proof.experience": "Más de 10 años desarrollando software",
         "hero.proof.focus": "Desarrollo web, automatización e IA",
-        "hero.status": "Modo agente: entender, probar, construir",
+        "hero.status": "Bilbao · trabajo local y remoto",
         "hero.cta": "Hablemos",
         "hero.secondary": "Ver servicios",
         "approach.kicker": "Enfoque",
-        "approach.title": "Software útil en la era de los agentes.",
-        "approach.text": "Soy Jon Tamayo Martínez, programador en Bilbao. Ayudo a empresas y profesionales a convertir procesos, datos e ideas en herramientas que de verdad se usan: webs profesionales, aplicaciones web, integraciones, automatizaciones y agentes de IA que quitan trabajo repetitivo de en medio.",
+        "approach.title": "Software útil, bien construido.",
+        "approach.text": "Soy Jon Tamayo Martínez, desarrollador en Bilbao con más de diez años de experiencia. Ayudo a empresas y profesionales a convertir ideas, procesos y datos en software que de verdad se usa: webs profesionales, aplicaciones web, integraciones, automatizaciones y, cuando aporta, IA.",
         "approach.strip.idea": "Idea clara",
         "approach.strip.prototype": "Prueba funcional",
         "approach.strip.system": "Sistema en uso",
@@ -29,18 +29,19 @@ const translations = {
         "approach.card3.text": "Conecto APIs, bases de datos, documentos y herramientas para quitar pasos manuales donde de verdad compensa.",
         "services.kicker": "Servicios",
         "services.title": "Qué puedo construir contigo.",
-        "services.ai.title": "Agentes de IA y asistentes internos",
-        "services.ai.text": "Diseño agentes que consultan información, ejecutan acciones, preparan informes y ayudan en tareas concretas de tu día a día.",
         "services.web.title": "Desarrollo web y producto digital",
         "services.web.text": "Webs profesionales, aplicaciones web, herramientas internas, paneles, portales y productos preparados para crecer con el proyecto.",
+        "services.ai.title": "IA aplicada y asistentes internos",
+        "services.ai.text": "Diseño asistentes de IA que consultan información, ejecutan acciones, preparan informes y ayudan en tareas concretas de tu día a día.",
         "services.integrations.title": "Integraciones y automatización",
         "services.integrations.text": "Conecto sistemas que ya usas: CRM, hojas de cálculo, correo, gestores documentales, APIs, scripts y bases de datos.",
         "services.systems.title": "Acompañamiento técnico",
         "services.systems.text": "Te ayudo a ordenar un proyecto, elegir una arquitectura, modernizar una herramienta antigua o decidir qué automatizar primero.",
         "projects.kicker": "Proyectos",
-        "projects.title": "Parte de lo que construyo en abierto.",
+        "projects.title": "Algunos de mis últimos proyectos.",
         "projects.fastergodot.text": "Motor basado en Godot 4.6.3 y orientado al rendimiento para juegos Forward+ Vulkan en Windows y Linux x86_64.",
         "projects.pixatto.text": "Herramienta de escritorio en SDL3 para convertir imágenes y texturas en arte pseudo-pixelado, con control fino del resultado.",
+        "projects.unsccied.text": "Herramienta de escritorio para crear y convertir arte ASCII y UNSCII, con importación y exportación de texto.",
         "projects.link.code": "Código",
         "process.kicker": "Forma de trabajar",
         "process.title": "Primero entender. Luego construir.",
@@ -63,24 +64,24 @@ const translations = {
         "github.stats.unavailable": "Datos no disponibles ahora"
     },
     en: {
-        metaTitle: "JTM Soluciones | Web development, AI and automation from Bilbao",
-        metaDescription: "JTM Soluciones, Jon Tamayo Martínez: web development, custom software, AI agents and automation from Bilbao, with more than 10 years of developer experience.",
+        metaTitle: "JTM Soluciones | Web development, software and AI from Bilbao",
+        metaDescription: "JTM Soluciones, Jon Tamayo Martínez: web development, custom software, automation and AI from Bilbao, with more than 10 years of developer experience.",
         skip: "Skip to content",
         "nav.approach": "Approach",
         "nav.services": "Services",
         "nav.projects": "Projects",
         "nav.contact": "Contact",
-        "hero.eyebrow": "Bilbao · Software development · AI agents",
-        "hero.lead": "I offer web development, custom software, automation and AI agents for teams that want to work better, not just faster.",
+        "hero.eyebrow": "Bilbao · Web & software development · AI",
+        "hero.lead": "I'm a developer. I build websites, custom software, automation and AI solutions for teams that want to work better, not just faster.",
         "hero.proof.location": "Based in Bilbao",
         "hero.proof.experience": "10+ years as a developer",
         "hero.proof.focus": "Web development, automation and AI",
-        "hero.status": "Agent mode: turning noise into systems",
+        "hero.status": "Bilbao · local & remote",
         "hero.cta": "Let's talk",
         "hero.secondary": "View services",
         "approach.kicker": "Approach",
-        "approach.title": "Practical programming for the age of agents.",
-        "approach.text": "I'm Jon Tamayo Martínez, a developer in Bilbao. I help companies and independent professionals turn ideas, processes and data into software people actually use: professional websites, web apps, integrations, automations and AI agents that take repetitive work off your plate.",
+        "approach.title": "Useful software, well built.",
+        "approach.text": "I'm Jon Tamayo Martínez, a developer in Bilbao with more than ten years of experience. I help companies and professionals turn ideas, processes and data into software people actually use: professional websites, web apps, integrations, automation and — where it genuinely helps — AI.",
         "approach.strip.idea": "Clear idea",
         "approach.strip.prototype": "Live prototype",
         "approach.strip.system": "Usable system",
@@ -92,18 +93,19 @@ const translations = {
         "approach.card3.text": "I connect APIs, databases, documents and tools so repetitive processes can move into the background.",
         "services.kicker": "Services",
         "services.title": "What I can build with you.",
-        "services.ai.title": "AI agents and copilots",
-        "services.ai.text": "I design agents that retrieve information, take actions, prepare reports, support decisions and fit the way you work.",
         "services.web.title": "Web development and digital product",
         "services.web.text": "Professional websites, web apps, internal tools, dashboards, portals and digital products ready to grow.",
+        "services.ai.title": "Applied AI and internal assistants",
+        "services.ai.text": "I build AI assistants that retrieve information, take actions, prepare reports and support concrete tasks in your day to day.",
         "services.integrations.title": "Integrations and automation",
         "services.integrations.text": "I connect systems you already use: CRMs, spreadsheets, email, document tools, APIs, scripts and databases.",
         "services.systems.title": "Technical consulting",
         "services.systems.text": "I help you choose architecture, organize a project, modernize an old tool or find where to automate first.",
         "projects.kicker": "Projects",
-        "projects.title": "Some of what I build in the open.",
+        "projects.title": "Some of my latest projects.",
         "projects.fastergodot.text": "A performance-first engine based on Godot 4.6.3, built for Forward+ Vulkan games on Windows and Linux x86_64.",
         "projects.pixatto.text": "An SDL3 desktop tool that turns images and textures into pseudo-pixel art, with fine control over the result.",
+        "projects.unsccied.text": "A desktop tool for creating and converting ASCII and UNSCII art, with text import and export.",
         "projects.link.code": "Code",
         "process.kicker": "Method",
         "process.title": "Less hype. More working prototype.",
@@ -124,9 +126,74 @@ const translations = {
         "github.stats.ready": "Public GitHub data",
         "github.stats.stale": "Cached public GitHub data",
         "github.stats.unavailable": "Data unavailable right now"
+    },
+    ja: {
+        metaTitle: "JTM Soluciones｜ビルバオ発の Web 開発・ソフトウェア・AI",
+        metaDescription: "JTM Soluciones（ヨン・タマヨ・マルティネス）— ビルバオを拠点に Web 開発、受託ソフトウェア、業務自動化、AI を提供。開発者として 10 年以上の経験。",
+        skip: "コンテンツへスキップ",
+        "nav.approach": "アプローチ",
+        "nav.services": "サービス",
+        "nav.projects": "プロジェクト",
+        "nav.contact": "お問い合わせ",
+        "hero.eyebrow": "ビルバオ · Web・ソフトウェア開発 · AI",
+        "hero.lead": "開発者として、Web サイトや受託ソフトウェア、業務の自動化、AI を活用した仕組みづくりを行っています。ただ速いだけでなく、より良く働きたいチームのために。",
+        "hero.proof.location": "ビルバオ拠点",
+        "hero.proof.experience": "開発者として 10 年以上",
+        "hero.proof.focus": "Web 開発・自動化・AI",
+        "hero.status": "ビルバオ · リモート・オンサイト対応",
+        "hero.cta": "ご相談はこちら",
+        "hero.secondary": "サービスを見る",
+        "approach.kicker": "アプローチ",
+        "approach.title": "役に立つソフトウェアを、丁寧に。",
+        "approach.text": "ビルバオを拠点とする開発者、ヨン・タマヨ・マルティネスです。10 年以上の経験を活かし、企業や個人のアイデア・業務・データを、実際に使われるソフトウェアへと形にします。プロフェッショナルな Web サイト、Web アプリ、各種連携、自動化、そして本当に役立つ場面では AI も。",
+        "approach.strip.idea": "明確なアイデア",
+        "approach.strip.prototype": "動く試作",
+        "approach.strip.system": "使えるシステム",
+        "approach.card1.title": "意味のある AI",
+        "approach.card1.text": "AI は、適切なコンテキストと道具、そして明確なタスクがあってこそ機能します。そこが出発点です。",
+        "approach.card2.title": "長く使えるソフトウェア",
+        "approach.card2.text": "10 年以上の開発経験から、読みやすいコード、シンプルなデプロイ、そして手のかからない運用の価値を学びました。",
+        "approach.card3.title": "ほどよい自動化",
+        "approach.card3.text": "API、データベース、ドキュメント、各種ツールをつなぎ、本当に効果のあるところで手作業を減らします。",
+        "services.kicker": "サービス",
+        "services.title": "一緒につくれるもの。",
+        "services.web.title": "Web 開発・デジタルプロダクト",
+        "services.web.text": "プロフェッショナルな Web サイト、Web アプリ、社内ツール、ダッシュボード、ポータル、そして成長に合わせて育てられるプロダクトを開発します。",
+        "services.ai.title": "実用的な AI と社内アシスタント",
+        "services.ai.text": "情報の検索、アクションの実行、レポート作成など、日々の具体的な業務を助ける AI アシスタントを設計します。",
+        "services.integrations.title": "連携と自動化",
+        "services.integrations.text": "CRM、スプレッドシート、メール、ドキュメント管理、API、スクリプト、データベースなど、すでにお使いのシステムをつなぎます。",
+        "services.systems.title": "技術サポート",
+        "services.systems.text": "プロジェクトの整理、アーキテクチャの選定、古いツールの刷新、まず何を自動化すべきかの判断などをお手伝いします。",
+        "projects.kicker": "プロジェクト",
+        "projects.title": "最近のプロジェクトより",
+        "projects.fastergodot.text": "Windows / Linux（x86_64）向けの Forward+ Vulkan ゲーム用に、パフォーマンスを重視した Godot 4.6.3 ベースのエンジン。",
+        "projects.pixatto.text": "画像やテクスチャを擬似ピクセルアートに変換する SDL3 製のデスクトップツール。結果を細かく調整できます。",
+        "projects.unsccied.text": "ASCII・UNSCII アートの作成と変換ができるデスクトップツール。テキストの読み込み・書き出しに対応。",
+        "projects.link.code": "コード",
+        "process.kicker": "進め方",
+        "process.title": "誇張より、動く試作を。",
+        "process.step1.title": "理解する",
+        "process.step1.text": "課題、使えるデータ、そして何をもって成功とするかを整理します。",
+        "process.step2.title": "試す",
+        "process.step2.text": "本格的につくり込む前に、価値を確かめるための最初の使える形を用意します。",
+        "process.step3.title": "つくる",
+        "process.step3.text": "保守しやすいコード、明確な連携、そして魔法に頼らず使える成果物に仕上げます。",
+        "contact.kicker": "お問い合わせ",
+        "contact.title": "つくりたい Web サイト・ツール・自動化について聞かせてください。",
+        "contact.text": "ビルバオを拠点に、オンサイトでもリモートでも対応しています。毎週くり返している作業、物足りないツール、形にしたいアイデアがあれば、まずは会話から始めて、相性を確かめましょう。",
+        "github.stats.repositories": "リポジトリ",
+        "github.stats.stars": "スター",
+        "github.stats.commits": "コミット",
+        "github.stats.followers": "フォロワー",
+        "github.stats.loading": "GitHub のデータを読み込み中",
+        "github.stats.ready": "GitHub の公開データ",
+        "github.stats.stale": "GitHub の公開データ（キャッシュ）",
+        "github.stats.unavailable": "現在データを取得できません"
     }
 };
 
+const supportedLanguages = ["es", "en", "ja"];
 const githubUsername = "vorvek";
 const githubStatsCacheUrl = "/github-stats.json?v=20260606-public";
 const githubStatsCacheKey = "jtm-github-stats";
@@ -144,7 +211,7 @@ const spanishTimeZones = new Set(["Europe/Madrid", "Atlantic/Canary"]);
 const spanishLocales = new Set(["es-es", "ca-es", "eu-es", "gl-es"]);
 
 function setLanguage(lang, persist = false) {
-    const nextLang = lang === "en" ? "en" : "es";
+    const nextLang = supportedLanguages.includes(lang) ? lang : "es";
     const dictionary = translations[nextLang];
 
     document.documentElement.lang = nextLang;
@@ -178,19 +245,25 @@ function setLanguage(lang, persist = false) {
     hydrateEmailLinks();
 }
 
+function browserLanguages() {
+    const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
+    return languages.filter(Boolean).map((language) => language.toLowerCase());
+}
+
 function browserLooksSpanish() {
     const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
-    const hasSpanishLocale = languages
-        .filter(Boolean)
-        .map((language) => language.toLowerCase())
-        .some((language) => spanishLocales.has(language));
+    const hasSpanishLocale = browserLanguages().some((language) => spanishLocales.has(language));
 
     return spanishTimeZones.has(timeZone) || hasSpanishLocale;
 }
 
+function browserLooksJapanese() {
+    return browserLanguages().some((language) => language === "ja" || language.startsWith("ja-"));
+}
+
 function currentLanguage() {
-    return document.documentElement.lang === "en" ? "en" : "es";
+    const lang = document.documentElement.lang;
+    return translations[lang] ? lang : "es";
 }
 
 function translate(key) {
@@ -448,6 +521,41 @@ function initGithubStats() {
     }
 }
 
+function initScrollReveal() {
+    const targets = document.querySelectorAll("[data-reveal]");
+    if (!targets.length) {
+        return;
+    }
+
+    const reveal = (element) => element.classList.add("is-visible");
+
+    const motionOk = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+    if (!motionOk || !("IntersectionObserver" in window)) {
+        targets.forEach(reveal);
+        return;
+    }
+
+    document.documentElement.classList.add("reveal-ready");
+
+    // The observer delivers an initial callback for elements already on screen,
+    // so no separate measuring pass is needed (and none that would force layout
+    // of the content-visibility:auto sections at load).
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                reveal(entry.target);
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
+
+    targets.forEach((element) => observer.observe(element));
+
+    // Safety net: if the rendering pipeline stalls (e.g. a backgrounded tab) and
+    // the observer never delivers, never leave content permanently hidden.
+    window.setTimeout(() => targets.forEach(reveal), 6000);
+}
+
 function decodeEmailPart(points) {
     return String.fromCharCode(...points);
 }
@@ -479,12 +587,22 @@ function detectLanguage() {
         savedLanguage = null;
     }
 
-    if (savedLanguage) {
+    if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
         setLanguage(savedLanguage);
         return;
     }
 
-    setLanguage(browserLooksSpanish() ? "es" : "en");
+    if (browserLooksSpanish()) {
+        setLanguage("es");
+        return;
+    }
+
+    if (browserLooksJapanese()) {
+        setLanguage("ja");
+        return;
+    }
+
+    setLanguage("en");
 }
 
 document.querySelectorAll("[data-set-lang]").forEach((button) => {
@@ -495,3 +613,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
 hydrateEmailLinks();
 detectLanguage();
 initGithubStats();
+initScrollReveal();
