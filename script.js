@@ -528,18 +528,32 @@ function initScrollReveal() {
     }
 
     const reveal = (element) => element.classList.add("is-visible");
+    const root = document.documentElement;
+
+    // A blocking <head> script hides [data-reveal] content before first paint
+    // (so it never flashes in visible, then disappears, then fades) and arms a
+    // watchdog that un-hides everything if this script never runs. Coordinate.
+    if (window.__revealBoot === "fired") {
+        // Watchdog already revealed everything (very slow load) — leave it shown.
+        root.classList.remove("reveal-ready");
+        targets.forEach(reveal);
+        return;
+    }
+    window.clearTimeout(window.__revealBoot);
+    window.__revealBoot = null;
 
     const motionOk = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
     if (!motionOk || !("IntersectionObserver" in window)) {
+        root.classList.remove("reveal-ready");
         targets.forEach(reveal);
         return;
     }
 
-    document.documentElement.classList.add("reveal-ready");
+    root.classList.add("reveal-ready");
 
     // The observer delivers an initial callback for elements already on screen,
-    // so no separate measuring pass is needed (and none that would force layout
-    // of the content-visibility:auto sections at load).
+    // so no separate measuring pass is needed (none that would force layout of
+    // the content-visibility:auto sections at load).
     const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -550,10 +564,6 @@ function initScrollReveal() {
     }, { rootMargin: "0px 0px -10% 0px", threshold: 0.12 });
 
     targets.forEach((element) => observer.observe(element));
-
-    // Safety net: if the rendering pipeline stalls (e.g. a backgrounded tab) and
-    // the observer never delivers, never leave content permanently hidden.
-    window.setTimeout(() => targets.forEach(reveal), 6000);
 }
 
 function decodeEmailPart(points) {
