@@ -60,7 +60,7 @@ const translations = {
         "github.stats.followers": "Seguidores",
         "github.stats.loading": "Cargando datos de GitHub",
         "github.stats.ready": "Datos públicos de GitHub",
-        "github.stats.stale": "Datos públicos de GitHub en caché",
+        "github.stats.stale": "Datos públicos de GitHub",
         "github.stats.unavailable": "Datos no disponibles ahora"
     },
     en: {
@@ -124,7 +124,7 @@ const translations = {
         "github.stats.followers": "Followers",
         "github.stats.loading": "Loading GitHub data",
         "github.stats.ready": "Public GitHub data",
-        "github.stats.stale": "Cached public GitHub data",
+        "github.stats.stale": "Public GitHub data",
         "github.stats.unavailable": "Data unavailable right now"
     },
     ja: {
@@ -188,7 +188,7 @@ const translations = {
         "github.stats.followers": "フォロワー",
         "github.stats.loading": "GitHub のデータを読み込み中",
         "github.stats.ready": "GitHub の公開データ",
-        "github.stats.stale": "GitHub の公開データ（キャッシュ）",
+        "github.stats.stale": "GitHub の公開データ",
         "github.stats.unavailable": "現在データを取得できません"
     }
 };
